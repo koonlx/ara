@@ -14,7 +14,7 @@
    "forwardPorts": [10001],
 
    // Use 'postCreateCommand' to run commands after the container is created.
-   "postCreateCommand": "go mod tidy && go get github.com/joho/godotenv && go get github.com/gorilla/mux",
+   "postCreateCommand": "go mod tidy && go mod init ara/mulgyeol && go get github.com/joho/godotenv github.com/gorilla/mux github.com/segmentio/kafka-go",
 
    // Configure tool-specific properties.
    "customizations": {

@@ -1,2 +1,26 @@
-.vscode
+# 바이너리 파일
+**/*.exe
+**/*.out
+**/*.bin
+
+# 로그 파일
+**/*.log
+
+# 환경 설정 파일
 **/.env
+**/config.yaml
+**/config.json
+
+# 빌드 디렉터리
+**/vendor/
+**/bin/
+**/obj/
+
+# IDE 및 시스템 파일
+**/.vscode/
+**/.idea/
+**/.DS_Store
+**/Thumbs.db
+
+# 테스트 결과
+**/*.test
