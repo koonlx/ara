@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+   "name": "Go",
+   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+   "image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
+
+   "features": {},
+
+   // Features to add to the dev container. More info: https://containers.dev/features.
+   // "features": {},
+
+   // Use 'forwardPorts' to make a list of ports inside the container available locally.
+   "forwardPorts": [10001],
+
+   // Use 'postCreateCommand' to run commands after the container is created.
+   "postCreateCommand": "go mod tidy && go get github.com/joho/godotenv && go get github.com/gorilla/mux",
+
+   // Configure tool-specific properties.
+   "customizations": {
+      "vscode": {
+         "settings": {
+            "go.toolsEnvVars": {
+               "GO111MODULE": "on"
+            }
+         },
+         "extensions": ["golang.go"]
+      }
+   },
+
+   "remoteEnv": {
+      "KOREA_INVEST_API_KEY": "${localEnv:KOREA_INVEST_API_KEY}",
+      "KOREA_INVEST_API_SECRET": "${localEnv:KOREA_INVEST_API_SECRET}"
+   },
+
+   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+   "remoteUser": "root"
+}
